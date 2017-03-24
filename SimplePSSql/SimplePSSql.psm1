@@ -525,7 +525,7 @@ Function Update-SimplePSSql
                 Try
                 {
                     Write-Host ('[' + (Get-Date).ToString('dd/MM/yyyy HH:mm:ss') + "] [INFO]: Deleting existing module files at '$ModuleDirectory'.")
-                    Remove-Item $ModuleDirectory -Force -Recurse
+                    Remove-Item $ModuleDirectory -Force -Recurse -ErrorAction Stop
                     Write-Host ('[' + (Get-Date).ToString('dd/MM/yyyy HH:mm:ss') + "] [INFO]: Creating module directory at '$ModuleDirectory'.")
                     New-Item $ModuleDirectory -ItemType Directory -Force | Out-Null
 
